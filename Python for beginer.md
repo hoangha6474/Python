@@ -10,6 +10,8 @@
 - **Toán tử số học:**
     - `+`, `-`, `*`, `/` (Cộng, trừ, nhân, chia).
     - `**` (Lũy thừa), `%` (Chia lấy dư).
+- **Toán tử logic** : and, or, not.
+- **Toán tử so sánh** : == , != , > , < , >= , <= .
 - **Ép kiểu & Kiểm tra kiểu:**
     - `type()`: Kiểm tra kiểu dữ liệu của biến.
     - `int()`, `float()`, `str()`: Chuyển đổi giữa các kiểu dữ liệu.
