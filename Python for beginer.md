@@ -44,7 +44,37 @@ except:
 - **Định nghĩa hàm:** Sử dụng từ khóa `def`.
 - **Giá trị trả về:** Sử dụng `return` để gửi kết quả từ hàm ra ngoài.
 - **Hàm tích hợp (Built-in):** `max()`, `min()`, `len()`, `sum()`.
+- Cú pháp cơ bản:
+```python
+def ten_ham ( tham_so ) :
+# Khối mã thực hiện công việc
+return ket_qua # (Tùy chọn)
+```
+### 3.1 - Gọi hàm
+Bước khai báo hàm chỉ là bước khai báo logic của một khối code, muốn sử dụng nó ta phải
+thực sự gọi tới hàm đó, truyền vào tham số cần thiết thì mới có thể lấy được output mong muốn.
+-  Để sử dụng hàm, ta gọi tên hàm kèm theo các đối số (argument) tương ứng:
+```
+ket_qua = cong_hai_so (3 , 5) # ket_qua = 8
+```
+-  Đối số phải khớp với số lượng và kiểu dữ liệu của tham số mà hàm yêu cầu.
 
+### 3.2 - Cách truyền đối số ( Argument )
+-  Tham số vị trí (positional arguments): Truyền theo thứ tự tham số trong định nghĩa hàm.
+```python
+print ( cong_hai_so (3 , 5) ) # 8
+```
+-  Tham số từ khóa (keyword arguments): Chỉ định rõ tên tham số khi gọi hàm, không cần theo thứ tự.
+```python
+print ( cong_hai_so ( b =5 , a =3) ) # 8
+```
+-  • Tham số mặc định (default arguments): Gán giá trị mặc định cho tham số, nếu không truyền thì dùng giá trị đó.
+```python
+def nhan_so (x , y =2) :
+	return x * y
+print ( nhan_so (3) ) # 6 (y mặc định là 2)
+print ( nhan_so (3 , 4) ) # 12 (y được truyền là 4)
+```
 ## 4. Vòng Lặp (Iterations)
 
 - **Vòng lặp `while`:** Lặp không xác định cho đến khi điều kiện sai.
