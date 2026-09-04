@@ -83,6 +83,15 @@ print ( nhan_so (3 , 4) ) # 12 (y được truyền là 4)
     - `break`: Thoát khỏi vòng lặp ngay lập tức.
     - `continue`: Bỏ qua phần còn lại của lần lặp hiện tại và bắt đầu lần lặp tiếp theo.
 - **Toán tử logic:** `is`, `is not` (mạnh hơn `==`), `None` (hằng số đại diện cho sự trống rỗng).
+- For với range: Sử dụng hàm range( ) để tạo dãy số và lặp qua chúng.
+``` python
+for i in range(3): # lặp từ 0 đến 2
+	print(i) # Output: 0, 1, 2
+
+# range (start, stop, step): bắt đầu, kết thúc (không bao gồm), bước nhảy
+for i in range(1, 6, 2) # lặp 1, 3, 5
+	print(i) #Outputn: 1, 3, 5 
+```
 #### Vòng lặp lồng nhau
 ```python
 	for i in range(3):
