@@ -1,0 +1,351 @@
+
+# Tổng Hợp Cú Pháp Python (Python for Everybody)
+
+## 1. Cơ Bản & Biểu Thức (Basics & Expressions)
+
+- **Gán giá trị:** Sử dụng dấu `=` để gán giá trị cho biến.
+- **Nhập dữ liệu:** `input()` trả về một chuỗi (string).
+- **Xuất dữ liệu:** `print()` dùng để hiển thị kết quả.
+- **Chú thích (Comments):** Sử dụng dấu `#` cho các dòng ghi chú.
+- **Toán tử số học:**
+    - `+`, `-`, `*`, `/` (Cộng, trừ, nhân, chia).
+    - `**` (Lũy thừa), `%` (Chia lấy dư).
+- **Toán tử logic** : and, or, not.
+- **Toán tử so sánh** : == , != , > , < , >= , <= .
+- **Ép kiểu & Kiểm tra kiểu:**
+    - `type()`: Kiểm tra kiểu dữ liệu của biến.
+    - `int()`, `float()`, `str()`: Chuyển đổi giữa các kiểu dữ liệu.
+
+## 2. Câu Lệnh Điều Kiện (Conditionals)
+
+- **Cấu trúc If/Elif/Else:**
+
+```python
+if x < 10:
+    print('Small')
+elif x < 20:
+    print('Medium')
+else:
+    print('Large')
+```
+
+- **Toán tử so sánh:** `==`, `!=`, `<`, `>`, `<=`, `>=`.
+- **Xử lý lỗi (Try/Except):** Giúp chương trình không bị dừng đột ngột khi gặp lỗi.
+
+```python
+try:
+    ival = int(rawstr)
+except:
+    ival = -1
+```
+
+## 3. Hàm (Functions)
+
+- **Định nghĩa hàm:** Sử dụng từ khóa `def`.
+- **Giá trị trả về:** Sử dụng `return` để gửi kết quả từ hàm ra ngoài.
+- **Hàm tích hợp (Built-in):** `max()`, `min()`, `len()`, `sum()`.
+- Cú pháp cơ bản:
+```python
+def ten_ham ( tham_so ) :
+# Khối mã thực hiện công việc
+return ket_qua # (Tùy chọn)
+```
+### 3.1 - Gọi hàm
+Bước khai báo hàm chỉ là bước khai báo logic của một khối code, muốn sử dụng nó ta phải
+thực sự gọi tới hàm đó, truyền vào tham số cần thiết thì mới có thể lấy được output mong muốn.
+-  Để sử dụng hàm, ta gọi tên hàm kèm theo các đối số (argument) tương ứng:
+```
+ket_qua = cong_hai_so (3 , 5) # ket_qua = 8
+```
+-  Đối số phải khớp với số lượng và kiểu dữ liệu của tham số mà hàm yêu cầu.
+
+### 3.2 - Cách truyền đối số ( Argument )
+-  Tham số vị trí (positional arguments): Truyền theo thứ tự tham số trong định nghĩa hàm.
+```python
+print ( cong_hai_so (3 , 5) ) # 8
+```
+-  Tham số từ khóa (keyword arguments): Chỉ định rõ tên tham số khi gọi hàm, không cần theo thứ tự.
+```python
+print ( cong_hai_so ( b =5 , a =3) ) # 8
+```
+-  • Tham số mặc định (default arguments): Gán giá trị mặc định cho tham số, nếu không truyền thì dùng giá trị đó.
+```python
+def nhan_so (x , y =2) :
+	return x * y
+print ( nhan_so (3) ) # 6 (y mặc định là 2)
+print ( nhan_so (3 , 4) ) # 12 (y được truyền là 4)
+```
+## 4. Vòng Lặp (Iterations)
+
+- **Vòng lặp `for`:** Lặp xác định qua một tập hợp hoặc chuỗi.
+- **Điều khiển vòng lặp:**
+    - `break`: Thoát khỏi vòng lặp ngay lập tức.
+    - `continue`: Bỏ qua phần còn lại của lần lặp hiện tại và bắt đầu lần lặp tiếp theo.
+- **Toán tử logic:** `is`, `is not` (mạnh hơn `==`), `None` (hằng số đại diện cho sự trống rỗng).
+- For với range: Sử dụng hàm range( ) để tạo dãy số và lặp qua chúng.
+``` python
+for i in range(3): # lặp từ 0 đến 2
+	print(i) # Output: 0, 1, 2
+
+# range (start, stop, step): bắt đầu, kết thúc (không bao gồm), bước nhảy
+for i in range(1, 6, 2) # lặp 1, 3, 5
+	print(i) #Outputn: 1, 3, 5 
+```
+- **Vòng lặp `while`:** Lặp không xác định cho đến khi điều kiện sai :
+ ```python
+	while dieu_kien :
+		# Khoi lenh
+ ```
+#### Vòng lặp lồng nhau
+```python
+	for i in range(3):
+		print("Vong for ngoai khi i = ", i)
+		for j in range(2):
+		print(i, j)
+```
+Output:
+```text
+Vong for ngoai khi i = 0  
+0 0  
+0 1  
+Vong for ngoai khi i = 1  
+1 0  
+1 1  
+Vong for ngoai khi i = 2  
+2 0  
+2 1
+```
+## 5. Chuỗi (Strings)
+
+- **Chỉ số (Indexing):** `s` lấy ký tự đầu tiên.
+- **Cắt chuỗi (Slicing):** `s[start:end]` (lấy từ start đến sát end).
+- **Kiểm tra sự tồn tại:** `in` trả về True/False.
+- **Phương thức chuỗi:**
+    - `.lower()`, `.upper()`: Chuyển đổi hoa/thường.
+    - `.find()`: Tìm vị trí chuỗi con.
+    - `.replace(old, new)`: Thay thế nội dung.
+    - `.strip()`, `.lstrip()`, `.rstrip()`: Loại bỏ khoảng trắng.
+    - `.startswith()`: Kiểm tra tiền tố.
+
+## 6. Tệp Tin (Files)
+
+- **Mở tệp:** `handle = open(filename, mode)` (mode 'r' là đọc, 'w' là ghi).
+- **Ký tự dòng mới:** `\n`.
+- **Đọc tệp:**
+    - Dùng vòng lặp `for line in handle:` để đọc từng dòng.
+    - `handle.read()` để đọc toàn bộ tệp vào một chuỗi đơn.
+
+## 7. Danh Sách (Lists)
+
+- **Đặc điểm:** Biến đổi được (mutable) và có thứ tự.
+- **Thao tác:**
+    - `.append(value)`: Thêm phần tử vào cuối.
+    - `.sort()`: Sắp xếp danh sách tại chỗ.
+    - `range(len(list))`: Tạo chỉ số để lặp.
+    - `.split()`: Chia chuỗi thành danh sách (rất quan trọng để xử lý dữ liệu).
+    - `+`: Nối hai danh sách.
+### 7.1.Khai báo list và truy xuất phần tử
+
+- Khai báo list :
+```python 
+	my_list = [1, 2, 3, 4]  # khai báo trực tiếp
+	empty_list = []     # List rỗng
+	mixed_list = [1, "hello", 3.14 ] # chứa nhiều kiểu dữ liệu	
+```
+- Truy xuất phần tử : Dùng chỉ số (index), bắt đầu từ 0. Chỉ số âm truy xuất từ cuối về đầu (-1 là phần tử cuối).
+```python
+my_list = [10 , 20 , 30 , 40]
+print ( my_list [0]) # Output : 10
+print ( my_list [ -1]) # Output : 40
+```
+
+### 7.2.Thêm, sửa, xóa phần tử
+
+* **Thêm phần tử:**
+* `.append(x)`: Thêm phần tử **x** vào cuối List.
+```python
+	my_list = [1, 2, 3] 
+	my_list.append(4) # my_list = [1, 2, 3, 4]
+```
+- `.insert(i, x)`: Chèn phần tử **x** vào vị trí **i**.
+```python
+	my_list.insert(1, 10) # my_list = [1, 10, 2, 3, 4]
+```
+- **Sửa phần tử:** Gán giá trị mới cho chỉ số cụ thể.
+```python
+	my_list[0] = 100 # my_list = [100, 10, 2, 3, 4]
+```
+### 7.3.Duyệt list bằng vòng lặp
+
+- Dùng for :
+-  Duyệt trực tiếp qua phần tử:
+```python
+	my_list = [1 , 2 , 3]
+	for item in my_list :
+	print ( item ) # Output : 1, 2 , 3
+```
+- Duyệt bằng chỉ số
+```python
+	for i in range(len(my_list)):
+		print(my_list[i]) # Output: 1, 2, 3
+```
+- Dùng while:
+```python
+	i = 0 
+		while i < len(my_list):
+		print(my_list[i])
+		i += 1 % Output : 1 , 2 , 3
+```
+### 7.4.Một số thao tác cơ bản
+
+* **`len()`:** Trả về độ dài của List. 
+```python 
+my_list = [1, 2, 3] print(len(my_list)) # Output: 3
+```
+- **`min(), max()`**: Tìm giá trị nhỏ nhất/lớn nhất.
+```python
+print(min(my_list))  # Output: 1
+print(max(my_list))  # Output: 3
+```
+- **`sum()`**: Tính tổng các phần tử.
+```python
+print (sum ( my_list ) ) # Output : 6
+```
+- **`sorted()`**: Trả về List mới đã sắp xếp.
+```python
+my_list = [3 , 1 , 2]
+print ( sorted ( my_list ) ) # Output : [1 , 2 , 3]
+```
+- **`reverse()`**: Đảo ngược thứ tự List.
+```python
+my_list . reverse () # my_list = [2 , 1 , 3]
+```
+- **`index(x)`**: Trả về chỉ số đầu tiên của x
+```python
+print ( my_list . index (1) ) # Output : 1
+```
+- **`count(x)`**: Đếm số lần xuất hiện của x.
+```python
+my_list = [1 , 2 , 1 , 3]
+print ( my_list . count (1) ) # Output : 2
+```
+### 7.5.List Comprehension and Dictionary
+
+- List comprehension là cách tạo List ngắn gọn bằng một dòng code, thay thế cho vòng lặp for truyền thống.
+- Cú pháp cơ bản: `biểu_thức for biến in iterable.`
+```python
+new_list = [ expression for item in iterable if condition ]
+```
+- Trong đó :
+	- `expression`: Biểu thức áp dụng lên từng phần tử.
+	- `item`: Phần tử lấy từ iterable (list, tuple, range, v.v.)
+	- `condition`: Chỉ thêm phần tử vào list nếu điều kiện đúng.
+- Ví dụ:
+```python
+even_numbers = [x for i in range (10) if x % 2 == 0]
+# Output : even_numbers = [0 , 2 , 4 , 6 , 8]
+```
+
+## 8. Từ Điển (Dictionaries)
+
+- **Đặc điểm:** Lưu trữ cặp `key:value`, không có thứ tự.
+- **Thao tác:**
+    - `.get(key, default)`: Lấy giá trị của key, nếu không có trả về giá trị mặc định (tránh lỗi `KeyError`).
+    - `.keys()`, `.values()`, `.items()`: Lấy danh sách khóa, giá trị hoặc cặp (key, value).
+
+## 9. Tuple
+
+- **Đặc điểm:** Không thể biến đổi (immutable), hiệu quả hơn List.
+- **Gán gộp (Assignment):** `(x, y) = (4, 'fred')`.
+- **So sánh:** So sánh từng phần tử từ trái qua phải cho đến khi tìm thấy sự khác biệt.
+
+## 10. Lập Trình Hướng Đối Tượng (OOP)
+- Là một phương pháp lập trình tổ chức và thiết kế phần mềm dựa trên cách đối tượng (objects). Các đối tượng này là sự kết hợp của dữ liệu ( thuộc tính ) và các phương thức ( thao tác trên dữ liệu đó. OOP giúp mã nguồn dễ duy trì, mở rộng và tái sử dụng)
+
+- **Lớp & Đối tượng:** `class` là bản thiết kế, `object` là thực thể.
+- **Hàm khởi tạo:** `def __init__(self, ...):` dùng để thiết lập thuộc tính ban đầu.
+- **Tính đóng gói (Encapsulation):**
+    - `_attribute`: Protected (truy cập trong class và subclass).
+    - `__attribute`: Private (truy cập nội bộ class).
+- **Tính kế thừa (Inheritance):** `class Child(Parent):`.
+- **Sử dụng `super()`:** Gọi hàm từ lớp cha.
+- **Đa hình (Polymorphism):** Các đối tượng khác nhau phản hồi cùng một lời gọi hàm theo cách riêng.
+- **Trừu tượng (Abstraction):** Sử dụng module `abc` và `@abstractmethod` để định nghĩa giao diện.
+
+#### 1. Thành phần cơ bản
+
+- **[[Class]] (Lớp):** Là một bản thiết kế (blueprint) để tạo ra các đối tượng.
+	# Ví dụ: Một công ty có rất nhiều nhân viên ( Employee)
+		- Employe:
+			+ First_name
+			+ last_name
+			+ age
+			+ salary
+
+- **[[Object]] (Đối tượng):** Là một thực thể (instance) cụ thể được tạo ra từ lớp. Ví dụ: Lớp `Student` có thể tạo ra các đối tượng như `"Nam (AI19b02)"`.
+- **[[Object Lifecycle]] (Vòng đời đối tượng):**
+    1. **Creation (Khởi tạo):** Sử dụng phương thức `__init__`.
+    2. **Usage (Sử dụng):** Truy cập thuộc tính và gọi phương thức.
+    3. **Destruction (Hủy bỏ):** Kích hoạt phương thức `__del__` khi đối tượng bị xóa hoặc nằm ngoài phạm vi.
+
+#### 2. Bốn cột trụ của OOP
+
+###  [[Encapsulation]] (Tính đóng gói)
+
+> [!info] Mục đích Gom nhóm dữ liệu và phương thức vào một đơn vị duy nhất, đồng thời hạn chế quyền truy cập trái phép.
+
+- **Access Modifiers (Cấp độ truy cập):**
+    - `Public`: Truy cập ở mọi nơi (ví dụ: `self.name`).
+    - `_Protected`: Truy cập trong lớp và các lớp con (ví dụ: `self._grade`).
+    - `__Private`: Chỉ truy cập được trong nội bộ lớp (ví dụ: `self.__balance`).
+- **[[Getters và Setters]]:** Phương thức để truy cập và sửa đổi dữ liệu an toàn.
+- **`@property` Decorator:** Kiểm soát truy cập dữ liệu nâng cao.
+
+### 🧩 [[Abstraction]] (Tính trừu tượng)
+
+- Tập trung vào việc ẩn đi các chi tiết triển khai phức tạp và chỉ hiển thị các tính năng thiết yếu.
+- **Triển khai:** Sử dụng module `abc` (Abstract Base Classes) và `@abstractmethod`.
+
+### 🌳 [[Inheritance]] (Tính kế thừa)
+
+- Cho phép lớp con (child class) nhận lại các đặc điểm và hành vi của lớp cha (parent class).
+- **Cú pháp:** `class Child(Parent):`.
+- **[[Method Overriding]]:** Định nghĩa lại một phương thức của lớp cha ngay tại lớp con để thay đổi hành vi.
+- **`super()`:** Dùng để gọi phương thức từ lớp cha (thường dùng trong `__init__`).
+
+### 🎭 [[Polymorphism]] (Tính đa hình)
+
+- Cho phép các đối tượng khác nhau phản hồi cùng một lời gọi hàm theo những cách riêng biệt của chúng.
+- **Ví dụ:** Các lớp `GraduateStudent` và `UndergraduateStudent` đều có phương thức `details()`, nhưng mỗi lớp trả về nội dung khác nhau khi được gọi trong cùng một vòng lặp.
+
+---
+
+#### 3. Quản lý và Thiết kế hệ thống
+
+- **Quản lý nhiều đối tượng:** Sử dụng các bộ sưu tập như **Lists** để lưu trữ và lặp qua các đối tượng nhằm thực hiện các thao tác hàng loạt.
+- **[[Modular Design]] (Thiết kế mô-đun):** Chia chương trình thành các phần nhỏ giúp tái sử dụng mã (50%), dễ bảo trì (30%) và gỡ lỗi (20%).
+- **[[Design Patterns]] (Mẫu thiết kế):** Các giải pháp mẫu cho vấn đề phổ biến như: Singleton (Khởi tạo), Adapter (Cấu trúc), Observer (Hành vi).
+
+---
+
+#### 4. Ví dụ Hệ thống Thư viện (Library System)
+
+> [!example] Code minh họa
+
+```python
+class LibraryItem: # Lớp cha
+    def __init__(self, title, item_id):
+        self.__title = title # Private attribute
+        self.__item_id = item_id
+
+    def get_details(self): # Phương thức cơ sở
+        return f"Title: {self.__title}, ID: {self.__item_id}"
+
+class Book(LibraryItem): # Kế thừa
+    def __init__(self, title, item_id, author):
+        super().__init__(title, item_id) # Gọi lớp cha
+        self.__author = author
+
+    def get_details(self): # Ghi đè (Overriding)
+        return super().get_details() + f", Author: {self.__author}"
+```
