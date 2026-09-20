@@ -287,9 +287,28 @@ Deep Copy : [[100 , 2 , 3] , [4 , 5 , 6]]
 ## 8. Từ Điển (Dictionaries)
 
 - **Đặc điểm:** Lưu trữ cặp `key:value`, không có thứ tự.
-- **Thao tác:**
-    - `.get(key, default)`: Lấy giá trị của key, nếu không có trả về giá trị mặc định (tránh lỗi `KeyError`).
-    - `.keys()`, `.values()`, `.items()`: Lấy danh sách khóa, giá trị hoặc cặp (key, value).
+- Khai báo:
+```python
+my_dict = {" name ": "An", " age ": 20} # key : " name ", value : "An"
+empty_dict = {} # Dictionary rỗng
+```
+- Truy xuất và thêm/sửa:
+```python
+print ( my_dict [" name "]) % Output : An
+my_dict ["age"] = 21 # sửa giá trị
+my_dict [" grade "] = "A" # Thêm cặp key-value mới
+```
+- Phương thức cơ bản:
+	- `.keys()`: Trả về danh sách các key.
+	-  `.values()`: Trả về danh sách các value.
+	- `.items()`: Trả về danh sách các cặp (key, value).
+	- `.get(key, default)`: Trả về giá trị của key, nếu không có thì trả về default.
+```python
+print ( my_dict . keys () ) # Output : dict_keys ([" name " , " age " , " grade "])
+print ( my_dict . get (" name ") )
+# Output : An
+```
+
 
 ## 9. Tuple
 
