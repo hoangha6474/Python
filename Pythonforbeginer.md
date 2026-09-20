@@ -245,7 +245,45 @@ new_list = [ expression for item in iterable if condition ]
 even_numbers = [x for i in range (10) if x % 2 == 0]
 # Output : even_numbers = [0 , 2 , 4 , 6 , 8]
 ```
+### 7.6.Copy list and Aliasing 
+- ``Aliasing``: Gán một List cho biến khác chỉ tạo tham chiếu, không tạo bản sao.
+```python
+list = [1, 2, 3]
+list2 = list1 # list2 tham chiếu đến list1
+list2 [0] = 10 # list1 c ũ ng thay đ ổ i : [10 , 2 , 3]
+```
+- `copy()`: Tạo một bản sao nông (shallow copy) của danh sách gốc, trong đó danh sách cha được sao chép, nhưng các phần tử bên trong vẫn tham chiếu đến cùng một đối tượng.
+```python
+original_list = [[1 , 2 , 3] , [4 , 5 , 6]]
+shallow_copy = original_list.copy()
 
+#Thay đổi một phần tử tronng danh sách con
+shallow_copy[0][0] = 100
+
+print (" Original List :", original_list )
+print (" Shallow Copy :", shallow_copy )
+
+# Output
+# Original List : [[100 , 2 , 3] , [4 , 5 , 6]]
+# Shallow Copy : [[100 , 2 , 3] , [4 , 5 , 6]]
+```
+- `deepcopy() (từ module copy)`: Tạo một bản sao sâu (deep copy) của danh sách gốc, trong đó toàn bộ danh sách và các phần tử bên trong đều được sao chép thành các đối tượng độc lập.
+```python
+import copy
+original_list = [[1, 2, 3] , [4, 5, 6]]
+deep_copy = copy.deepcopy ( original_list )
+
+deep_copy [0][0] = 100
+
+print (" Original List :", original_list )
+print (" Deep Copy :", deep_copy )
+
+# Output
+Original List : [[1 , 2 , 3] , [4 , 5 , 6]]
+# Không bị thay đổi
+Deep Copy : [[100 , 2 , 3] , [4 , 5 , 6]]
+# Chỉ bản sao bị thay đổi
+```
 ## 8. Từ Điển (Dictionaries)
 
 - **Đặc điểm:** Lưu trữ cặp `key:value`, không có thứ tự.
