@@ -284,6 +284,40 @@ Original List : [[1 , 2 , 3] , [4 , 5 , 6]]
 Deep Copy : [[100 , 2 , 3] , [4 , 5 , 6]]
 # Chỉ bản sao bị thay đổi
 ```
+### 7.7.List và ma trận 2D
+
+- Ma trận 2D là List lồng nhau (nested list), biểu diễn dữ liệu dạng bảng (hàng và cột).
+- Khai báo:
+```python
+matrix = [[1, 2, 3],
+		[4, 5 ,6],
+		[7, 8, 9]]
+# ma trận 3x3
+```
+- Truy xuất phần tử: Dùng chỉ số kép `[hàng][cột]`
+```python
+print(matrix[0][1])
+#Output: 2 ( hàng 0, cột 1)
+```
+- Duyệt ma trận : Dùng vòng lặp lồng nhau.
+```python
+for row in matrix:
+	for element in row:
+		print(element, end=" ") #Output: 1 2 3 4 5 6 7 8 9 
+```
+### 7.8.List Slicing
+
+- Slicing là cách trích xuất một phần của List bằng cú pháp `[start:stop:step]`.
+- Cú pháp:
+	- `start`: Chỉ số bắt đầu (bao gồm).
+	- `stop`: Chỉ số kết thúc (không bao gồm).
+	- `step`: Bước nhảy (mặc định là 1).
+```python
+my_list = [0 , 1 , 2 , 3 , 4 , 5]
+print ( my_list [1:4]) # Output : [1 , 2 , 3]
+print ( my_list [::2]) # Output : [0 , 2 , 4] (lấy cách 2 phần tử)
+print ( my_list [:: -1]) # Output : [5 , 4 , 3 , 2 , 1 , 0] (đảo ngược)
+```
 ## 8. Từ Điển (Dictionaries)
 
 - **Đặc điểm:** Lưu trữ cặp `key:value`, không có thứ tự.
@@ -310,11 +344,31 @@ print ( my_dict . get (" name ") )
 ```
 
 
-## 9. Tuple
+## 9. Set và Tuple
+- Set 
+	- Là tập hợp chỉ chứa các phần tử duy nhất, không thể thực hiện truy xuất các phần tử thông qua index.
+	- Khai báo :
+```python
+	my_set = {1 , 2 , 3} # hoặc my_set = set([1 , 2 , 3])
+```
 
-- **Đặc điểm:** Không thể biến đổi (immutable), hiệu quả hơn List.
-- **Gán gộp (Assignment):** `(x, y) = (4, 'fred')`.
-- **So sánh:** So sánh từng phần tử từ trái qua phải cho đến khi tìm thấy sự khác biệt.
+- Thao tác : .add() , .remove(), .union(), .intersection().
+
+```python
+	my_set.add (4) # my_set = {1 , 2, 3 , 4}
+```
+
+- Tuple
+	- Là tập hợp chưa các phần tử không thể bị thay đổi.
+	- Khai báo
+```python
+	my_tuple = (1 , 2 , 3) # hoặc my_tuple = tuple ([1 , 2 , 3])
+```
+
+- Truy xuất : Dùng chỉ số như List, nhưng không thể sửa đổi.
+```python
+	print(my_tuple [0]) # Output 1
+```
 
 ## 10. Lập Trình Hướng Đối Tượng (OOP)
 - Là một phương pháp lập trình tổ chức và thiết kế phần mềm dựa trên cách đối tượng (objects). Các đối tượng này là sự kết hợp của dữ liệu ( thuộc tính ) và các phương thức ( thao tác trên dữ liệu đó. OOP giúp mã nguồn dễ duy trì, mở rộng và tái sử dụng)
